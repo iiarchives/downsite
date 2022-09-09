@@ -37,6 +37,18 @@
         <!-- JS -->
         <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
+            setInterval(() => {
+                $.ajax({
+                    url: "https://iipython.cf",
+                    error: () => {
+                        console.log("Main site timed out at 1s");
+                    },
+                    success: () => {
+                        window.location.href = "https://iipython.cf";
+                    },
+                    timeout: 1000
+                });
+            }, 5000);
         </script>
     </body>
 </html>
